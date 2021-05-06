@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+        <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans+Condensed:300,300i,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="estilos.css">
+    <title>Login</title>
+    <style>
+        table {
+            width: 400px;
+            border: 2px solid #333;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        th {
+            font-size: 18px;
+        }
+    
+        td{
+            background-color: green;
+            text-align: center;
+            font-size: 40px;
+        }
+        input{
+            border: 0.5px solid black;
+        }
+    </style>
+</head>
+<body style="background-image: url(images/imagen_2.jpg);">
+    <header>
+        <h1>EJERCIO FINAL</h1>
+        <nav id="links">
+            <a href="index.html" class="efecto_link">Home </a>
+            
+        </nav>
+    </header>
+    <main >
+    
+    <h1 style="text-align:center" >Iniciar Sesion</h1>
+    
+        <table >
+            <form action="login.php" method="POST">
+            
+        <tr>
+            
+            <td>
+                <label style="font-size: 20px;">
+                    Ingrese Usuario: 
+                    <input type="text" name="txtUsuario" value="" placeholder="ejemplo@gmail.com">
+                </label><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="font-size: 20px;">
+                    Ingrese Contraseña: 
+                    <input type="text" name="txtPassword" value="" placeholder="********">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="font-size: 25px;">
+                    <input type="submit" value="Enviar">
+                </label>
+            </td>
+        </tr>
+         
+        </tbody>
+    </form>
+        </table>
+
+</main>
+
+</body></html>

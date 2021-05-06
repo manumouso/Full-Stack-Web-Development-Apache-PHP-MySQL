@@ -1,0 +1,352 @@
+/* https://flexbox.help/ */
+
+body {
+    margin: 0;
+    background-color: floralwhite;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    height: 80px;
+    background-color: cadetblue;
+}
+
+h1{
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    margin-left: 50px;
+}
+
+h2,h3,h4,h5,h6{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: cadetblue;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: cadetblue;
+    text-align: center;
+    padding: 30px;
+}
+
+#central {
+    display: flex;
+}
+
+#nosotros{
+    background-color: white;
+}
+
+#section_superior{
+    background-color: white;
+}
+
+/*
+Selector Múltiple : 
+
+selector  , selector [,selectores] {}
+*/
+.izq , .der {
+    height: 100px;
+    width: 100px;
+    background-color: wheat;
+}
+
+.arriba {
+    width: 230px;
+    height: 120px;
+    background-color: aquamarine;
+    margin-bottom: 15px;
+}
+
+.izq {
+    margin-right: 15px;
+}
+
+.der {
+    margin-left: 15px;
+}
+
+.abajo {
+    display: flex;
+    margin-top: 15px;
+}
+
+/* 
+.der {
+    height: 100px;
+    width: 100px;
+    background-color: antiquewhite;
+} 
+*/
+
+#izq {
+    margin-right: 30px;
+}
+
+#der {
+    margin-left: 30px;
+}
+
+#nosotros_central {
+    display: flex;
+    width: 700px;
+    justify-content: space-between;
+}
+
+.iconos_red {
+    width: 50px;
+    height: 50px;
+    background-color: lightblue;
+    /*  border : 2px solid white; */
+    /* 
+    border-width: 2px;
+    border-style: solid;
+    border-color: green; 
+    */
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.iconos {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.overlay{
+    background-color: rgba(0,0,0,0.5);
+    width: 200px;
+    height: 200px;
+    position: absolute; 
+}
+
+.imagen {
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative; /*para que el overlay pueda ser absoluto*/
+}
+
+.imagen:hover .overlay{
+    background-color: transparent;
+}
+
+/* h2::before{
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    display: block;
+}
+
+h2:after{
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    display: block;
+} */
+
+/*
+PSEUDO-CLASES : Es un selector adicion que se agrega a un selector normal con prefijo : (dos puntos) y nos permite ponerle reglas a elementos internos de una etiqueta(PSEUDO-ELEMENTOS) o estados(PSEUDO-CLASES)
+
+SELECTOR DE CURSOS ENCIMA :
+selector : hover{}
+
+SELECTOR DE ANTES Y DESPUES : necesito indicarle siempre el content, es decir, el contenido.  Si no tiene contenido, tiene que tener si o si un display!!!!
+
+selector : before{}
+selector : after{}
+
+
+SELECTOR DE POSICION :    
+selector:nth-child(N) 
+
+*/
+
+/*Selector de JERARQUIA:
+
+padre hijo {} : Para todos los elementos hijos que esten en alguna poscion adentro de un elemento padre.
+body div {}
+
+
+padre > hijo : Para todos los elementos hijos directos de un elemento padre. 
+body > div {}
+
+Para todos los elemento con clase .nosotros_columna, solo el primero de los hermanos cuyo elemento hijo tenga la clase .imagen.
+
+*/
+
+/* .imagen:nth-child(1) {
+    /*background-image : sirve para poner una imagen de fondo o usar gradientes de colores
+    background-image: url(imagen_1.jpg);
+    background-size: cover;
+} */
+
+.imagen{
+    background-size: cover;
+} /*hicimos que todos los.imagen tengan una misma regla con el selector .imagen*/
+
+.nosotros_columna:nth-child(1) .imagen{
+    background-image: url(images/imagen_1.jpg);
+}
+.nosotros_columna:nth-child(2) .imagen{
+    background-image: url(images/imagen_2.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+
+}
+.nosotros_columna:nth-child(3) .imagen{
+    background-image: url(images/imagen_3.jpg);
+    background-position: center;
+
+}
+
+
+.nosotros_columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 210px;
+}
+
+
+/*https://material.io/design/*/
+
+/*
+background-position : nos sirve para determinar la posision de arranque de imagen. Pueden ser coordenadas en X o Yo palabras resevadas como 
+laterales : top - botton - center - left - right 
+
+background-repeat : Nos sirve para determinar como vamos a repetor la imagen en su elemento. 
+
+*/
+
+.iconos .iconos_red:nth-child(1){
+    background-image: url(images/social.png);
+    background-position: 237px 152px;
+}
+.iconos .iconos_red:nth-child(2){
+    background-image: url(images/social.png);
+    background-position: -15px 152px;
+}
+.iconos .iconos_red:nth-child(3){
+    background-image: url(images/social.png);
+    background-position: 655px 152px;
+}
+
+.p_iconos{
+    text-align: center;
+    color: #333333; /*formaa hexadecimal de establecer el color*/
+}
+
+
+/*
+COLORES : 
+
+- predeterminados : blue - read - green
+- hexadecimales : #xyxyxy #xxx
+- rgb / rgba : rgb(0-255,0-255,0-255) 
+               rgba(0-255,0-255,0-255,0-1)
+- hsl / hsla : hsl() hsla()
+*/
+
+#text_banner{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    text-align: justify;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.527);
+    padding:  15px 30px;   
+    margin-left: 150px; 
+}
+
+#banner{
+    display: flex;
+    justify-content: space-between;
+}
+
+#banner:nth-child(1){
+    background-image: url(images/banner_dos.jpeg);
+    height: 700px;
+    background-size: cover;
+    background-position: bottom;
+}
+
+#banner h2 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/*
+POSICION Y MOVIMIENTO
+
+position : static(default) - relative - absolute - fixed
+
+left : cords desde la izquierda
+right : cords desde ña derecha
+top : cords desde arriba
+bottom : cords desde abajo
+z-index : Indice de capa en el eje z
+
+ninguna de las reglas aplica si la position es static. 
+
+- relative: 
+  p{
+    position: relative;
+    left: 20px;
+    }  
+
+- absolute: se mueve por la pagina dsde la posicion absoluta evaluando su padre, sino seguira 
+subiendo hasta que algo sea relativo o hasta llegar al body. 
+
+- fixed: igual que un absoluto pero queda fijo en la pagina, sigue con el scroll.
+*/
+
+
+/*pasos para actividad en los links 
+1) Ponerle un before y after a todos los links
+2) su contenido es "[" o "]"
+3) Su color inicial es transparente
+4) Cuando le pongo el cursos encima su color final es blanco
+
+*/
+
+.efecto_link:before{
+    content: "[ ";
+    color: transparent;
+}
+.efecto_link:after{
+    content: " ]";
+    color: transparent;
+}
+
+.efecto_link:hover:after {
+    color: white;
+}
+.efecto_link:hover:before {
+    color: white;
+}
