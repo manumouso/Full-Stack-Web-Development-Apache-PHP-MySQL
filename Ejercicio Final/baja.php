@@ -16,7 +16,7 @@ if($password==$password2){
 
 if(imprimirValidacion($aErrores,$aMensajes,"Hasta luego $usuario","Introduzca los datos requeridos","baja.html")){
 
-    $conexion = establecerConexion("localhost","root","1234php","ejerciciofinaldb");
+    $conexion = establecerConexion("localhost","root","*****","ejerciciofinaldb");
     // Verificar si la conexion fue exitosa
     if($conexion!="error"){
         $fila = buscarDato($conexion,"usuarios","nombreUsuario",$usuario);

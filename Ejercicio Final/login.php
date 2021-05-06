@@ -9,7 +9,7 @@ $password=$_POST['txtPassword'];
 validarTexto($usuario,"usuario","Debe ingresar un nombre de usuario valido, recuede solo puede ingresar caracteres y/o numeros @ ., y el usuario debe existir de lo contrario registrese.",$aErrores,$aMensajes);
 validarTexto($password,"password","Debe ingresar una constraseña valida, recuede solo puede ingresar caracteres y/o numeros",$aErrores,$aMensajes);
 if(imprimirValidacion($aErrores,$aMensajes,"Login","Introduzca los datos requeridos","login.html")){
-    $conexion = establecerConexion("localhost","root","1234php","ejerciciofinaldb");
+    $conexion = establecerConexion("localhost","root","*****","ejerciciofinaldb");
     // Verificar si la conexion fue exitosa
     if($conexion!="error"){
         $fila = buscarDato($conexion,"usuarios","nombreUsuario",$usuario);

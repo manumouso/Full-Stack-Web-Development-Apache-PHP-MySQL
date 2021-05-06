@@ -28,7 +28,7 @@ if(!empty($_POST['radSexo'])){
 if(imprimirValidacion($aErrores,$aMensajes,"Actualización","Ingrese los datos correctamente","alta.html")){
     $sexo=$_POST['radSexo'];
   
-    $conexion = establecerConexion("localhost","root","1234php","ejerciciofinaldb");
+    $conexion = establecerConexion("localhost","root","*****","ejerciciofinaldb");
     // Verificar si la conexion fue exitosa
     if($conexion!="error"){
         $fila = buscarDato($conexion,"usuarios","nombreUsuario",$usuarioAnterior);
